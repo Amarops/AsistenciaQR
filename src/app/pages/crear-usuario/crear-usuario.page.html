@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-title>Crea tu usuario</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <div class="div-login" style="margin:30px;">
+    <!-- CAJITAS DE TEXTO -->
+    <h2>Bienvenido!</h2> 
+    <br>
+    <ion-input [(ngModel)]="usuario" label="Usuario" label-placement="floating" fill="outline" placeholder="Ingresa tu usuario" required></ion-input>
+    <br>
+    <ion-input  [(ngModel)]="nombre" label="Nombre" label-placement="floating"  fill="outline" placeholder="Ingresa tu nombre" required></ion-input> 
+    <br>
+    <ion-input  [(ngModel)]="apellido" label="Apellido" label-placement="floating" fill="outline" placeholder="Ingresa tu apellido" required></ion-input> 
+    <br>
+    <ion-input  [(ngModel)]="correo" label="Correo" label-placement="floating"  fill="outline" placeholder="Ingresa tu correo" required></ion-input> 
+    <br>
+    <ion-input  [(ngModel)]="contrasena" type="password" label="Contraseña" fill="outline" label-placement="floating"  placeholder="Ingresa tu contraseña" style="margin-bottom: 50px;" required></ion-input> 
+
+    <!-- BOTONES -->
+    <ion-button expand="block"  class="color-principal boton" (click)="almacenarUsuario(usuario, nombre, apellido,correo,  contrasena)"> Crear usuario </ion-button>
+    <div style="display: flex;"><p style="margin-right: 5px;">Ya tienes cuenta? </p> <p style="text-decoration: underline; color: rgb(13, 149, 212);" routerLink="/login"> Iniciar sesión</p></div>
+  </div>
+
+
+  
+  
+</ion-content>

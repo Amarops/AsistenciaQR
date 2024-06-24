@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Cambia tu contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="div-login" style="margin:30px;">
+    <!-- CAJITAS DE TEXTO -->
+    <br>
+    <h2 style="margin-bottom: 20%;">No te gusta tu contraseña? <br>Cámbiala ahora!</h2>
+    <br>
+    <ion-input [(ngModel)]="usuario" label="Usuario" fill="outline" label-placement="floating"  placeholder="Ingresa tu usuario" required></ion-input> 
+    <br>
+    <ion-input [(ngModel)]="contrasenaAntigua" type="password" fill="outline" label="Contraseña actual" label-placement="floating"  placeholder="Ingresa tu contraseña actual" required></ion-input> 
+    <br>
+    <ion-input [(ngModel)]="contrasenaNueva" type="password" fill="outline" label="Nueva contraseña" label-placement="floating"  placeholder="Ingresa tu nueva contraseña" style="margin-bottom: 50px;" required></ion-input> 
+     
+
+    <!-- BOTONES -->
+    <ion-button expand="block"  class="color-principal boton" (click)="realizaCambio(usuario, contrasenaAntigua, contrasenaNueva)"> Cambiar contraseña </ion-button>
+    <div style="display: flex;"><p style="margin-right: 5px;">Ya no quieres cambiarla?</p> <p style="text-decoration: underline; color: rgb(13, 149, 212);" routerLink="/login"> Inicia sesión</p></div>
+
+  </div>
+
+</ion-content>

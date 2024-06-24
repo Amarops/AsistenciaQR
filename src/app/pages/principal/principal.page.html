@@ -1,0 +1,70 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Menú principal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-item style="margin:40px;" *ngFor="let usuario of usuarioDatos">
+    <ion-avatar slot="start">
+      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ion-avatar>
+    <ion-label>{{usuario.nombre}} {{usuario.apellido}}</ion-label>
+    
+    <ion-icon name="menu-outline" id="open-action-sheet"></ion-icon>
+    <ion-action-sheet trigger="open-action-sheet" header="Opciones" [buttons]="actionSheetButtons"></ion-action-sheet>
+
+  </ion-item>
+  <ion-card style="margin:40px;">
+    <ion-card-header>
+      <ion-card-title><ion-icon name="calendar-outline"></ion-icon> Revisar asistencia 🤓👆</ion-card-title>
+      <ion-card-subtitle><ion-button expand="block" (click)="irAsistencia()">Asistencia</ion-button></ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card style="margin:40px;" (click)="pagina(1)">
+    <img src="assets/duoc-800x394-1.jpg">
+    <ion-card-header>
+      <ion-card-title>Duoc UC</ion-card-title>
+      <ion-card-subtitle>Sede San Carlos De Apoquindo</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card style="margin:40px;" (click)="pagina(2)">
+    <img src="assets/tec.jpg">
+    <ion-card-header>
+      <ion-card-title>Innovación</ion-card-title>
+      <ion-card-subtitle>Próximas actualizaciones</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+
+  <ion-fab slot="fixed" vertical="top" horizontal="end" [edge]="true">
+    <ion-fab-button>
+      <ion-icon name="chevron-down-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="bottom">
+
+      <ion-fab-button>
+        <ion-icon name="lock-closed" routerLink="/cambiar-contrasena"></ion-icon>
+      </ion-fab-button>
+
+      <ion-fab-button>
+        <ion-icon name="log-out" routerLink="/login"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="scan()" [disabled]="!isSupported">
+      <ion-icon name="scan"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+
+  
+
+
+</ion-content>

@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>asistencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    
+    <ion-toolbar>
+        
+      <ion-title size="large">asistencia</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  
+
+
+  <ion-item style="margin:40px;" *ngFor="let usuario of usuarioDatos">
+      <ion-avatar slot="start">
+        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <ion-label>{{usuario.nombre}} {{usuario.apellido}}</ion-label>
+    
+    <ion-icon name="arrow-back-circle-sharp" (click)="irPrincipal()"></ion-icon>
+
+  </ion-item>
+
+  <ion-card style="margin:40px;" *ngFor="let dato of datos">
+    <ion-card-header style="color: {{ dato.CLASES_PRESENTE/dato.TOTAL_CLASES*100 >= 75 ? 'green' : 'red' }};">
+      <ion-list>
+        <ion-card-title>{{dato.ASIGNATURA}}</ion-card-title>
+        <ion-item>
+          <ion-label>Código: {{dato.CODIGO_ASIGNATURA}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Total clases: {{dato.TOTAL_CLASES}}</ion-label>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label style="color: {{ dato.CLASES_PRESENTE/dato.TOTAL_CLASES*100 > 75 ? 'green' : 'red' }};">Porcentaje asistencia: {{dato.CLASES_PRESENTE/dato.TOTAL_CLASES*100}}%</ion-label>
+
+        </ion-item>
+      </ion-list>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

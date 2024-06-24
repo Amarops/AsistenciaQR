@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="color-principal">
+    <ion-title>Inicia sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="div-login" style="margin:30px;">
+    <!-- CAJITAS DE TEXTO -->
+    <h2 style="margin-bottom:20%; margin-top: 40px;">Estás de vuelta!</h2>
+    
+    <ion-input [(ngModel)]="usuario" label="Usuario" label-placement="floating"  fill="outline" placeholder="Ingresa tu usuario" required></ion-input>  
+
+    <br>
+    <ion-input [(ngModel)]="contrasena" label="Contraseña" type="password" labelPlacement="floating" fill="outline" placeholder="1ngr3s4 7u c0n7r4s3ñ4" style="margin-bottom: 50px;" required></ion-input>
+    
+    <!-- BOTONES -->
+    <ion-button expand="block" class="color-principal boton" (click)="validarDatos(usuario, contrasena)"> Ingresar </ion-button>
+    
+    <div style="display: flex;"><p style="margin-right: 5px;">No tienes cuenta? </p> <p style="text-decoration: underline; color: rgb(13, 149, 212);" routerLink="/crear-usuario">Crear usuario</p></div>  
+    <div style="display: flex;"><p style="margin-right: 5px;">Mala memoria? </p> <p style="text-decoration: underline; color: rgb(13, 149, 212);" routerLink="/cambiar-contrasena">Restablece tu contraseña</p></div>  
+    
+
+  </div>
+</ion-content>
